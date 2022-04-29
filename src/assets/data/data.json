@@ -1,0 +1,142 @@
+{
+	"respecto_mi": {
+		"imagen_face": "https://media-exp1.licdn.com/dms/image/C4E03AQH4AVut0TDJBw/profile-displayphoto-shrink_100_100/0/1516508517560?e=2147483647&v=beta&t=KecATLBaKiZiQ8c6zXc_u7FUfrsTj3ScV4U9Owv2hZM",
+		"nombre": "Luis Cespedes",
+		"fecha_nac": "15 de octubre de 1978",
+		"provincia_naci": "Mendoza",
+		"pais_naci": "Argentina",
+		"texto_respecto": "Como Técnico Electromecánico logre conocer el funcionamiento del mundo de la energía, sin embargo ese camino de circuitos y cables solo me mostraba una parte superflua del todo, al convertirme en Operador de equipos informáticos, mi acceso a ordenadores me llevaría a poder entender como se accionan ciertos mecanismos que vemos a diario, pero faltaba más, poder crearlos, y así como Full Stack Developer Jr. pude mostrar mi potencial signado como siempre por la curiosidad, que al fin y al cabo es el motor que hace funcionar todo."
+	},
+
+	"educacion": [{
+			"imag_edu": "/assets/img/imagen_proyect/logo_merin.png",
+			"educa": "Escuela Técnica 4-124 Reynaldo Merin",
+			"titulo": "Técnico Mecánico Electricista",
+			"cursado": " 1991-1997 ",
+			"lugar_educa": "San Rafael-Mendoza-Argentina"
+		},
+		{
+			"imag_edu": "/assets/img/imagen_proyect/logo_ies.png",
+			"educa": "I.E.S. En Informática 9-012",
+			"titulo": "Operador de Equipos informaticos",
+			"cursado": "1998-1999",
+			"lugar_educa": "San Rafael-Mendoza-Argentina"
+		},
+		{
+			"imag_edu": "/assets/img/imagen_proyect/logo_argprom.jpg",
+			"educa": "INTI Argentina Programa",
+			"titulo": "Full Stack Developer Jr.",
+			"cursado": "2021-2022",
+			"lugar_educa": "Mendoza-Argentina"
+		}
+	],
+
+	"experiencia": [{
+			"imag_exper": "/assets/img/imagen_proyect/logo_amee.png",
+			"trabajo": "A.M.E.E",
+			"tiempo_trab": "2001 (FEB) – 2006 (AGO)",
+			"cargo_trab": "Radioperador y despachador de emergencias medicas",
+			"lugar_trab": " San Rafael-Mendoza-Argentina"
+		},
+		{
+			"imag_exper": "/assets/img/imagen_proyect/logo_vibrafm.png",
+			"trabajo": "FM VIBRA 100.5 – FM CADENA 100",
+			"tiempo_trab": "2005 (FEB) – 2008 (DIC)",
+			"cargo_trab": "Conducción y producción de programa de programa radio semanal y diario",
+			"lugar_trab": " San Rafael-Mendoza-Argentina"
+		},
+		{
+			"imag_exper": "/assets/img/imagen_proyect/logo_delsol.png",
+			"trabajo": "FM 100.9 ESTACION DEL SOL",
+			"tiempo_trab": "2009 (ENE) – 2011 (DIC)",
+			"cargo_trab": "Conducción y producción de programa de radio semanal y diario. Edicion de programa de radio semanal. Musicalizacion de programa de radio semanal.",
+			"lugar_trab": "Mendoza-Argentina"
+		},
+		{
+			"imag_exper": "/assets/img/imagen_proyect/logo_vendimia.png",
+			"trabajo": "FIESTA NACIONAL DE LA VENDIMIA",
+			"tiempo_trab": "Marzo 2012)",
+			"cargo_trab": " Conducción segunda repetición “Te miro… Vendimia de colores”",
+			"lugar_trab": "Mendoza-Argentina"
+		},
+		{
+			"imag_exper": "/assets/img/imagen_proyect/logo_playup.png",
+			"trabajo": "PLAY UP ENTERTAIMENT",
+			"tiempo_trab": "2012 (JUN) – 2018 (MZO)",
+			"cargo_trab": "Conducción y Supervisión de Activaciones de “Fernet Branca.",
+			"lugar_trab": "CABA-Argentina"
+		},
+		{
+			"imag_exper": "/assets/img/imagen_proyect/logo_atiempo.png",
+			"trabajo": "A TIEMPO EMERGENCIAS MEDICAS",
+			"tiempo_trab": "Abril 2012-actual",
+			"cargo_trab": "Radioperador y despachador de emergencias medicas",
+			"lugar_trab": "Mendoza-Argentina"
+		}
+	],
+	"cursos": [{
+			"curso": "Dactilografía",
+			"data_curso": " (Tipeado y Dictado) (1993-Sind Luz y Fuerza-San Rafael-Mza.-Arg)"
+		},
+		{
+			"curso": "Programación de PLC",
+			"data_curso": " (Programador Lógico Controlable) (1997- Escuela Técnica Reynaldo Merin-San Rafael-Mza.-Arg)"
+		},
+		{
+			"curso": "Locución y Producción Integral De Radio",
+			"data_curso": "(2000-Inst. Santa Trinidad-San Rafael-Mza.-Arg)"
+		},
+		{
+
+			"curso": "Taller De Periodismo",
+			"data_curso": "(2001-Inst. Santa Trinidad-San Rafael-Mza.-Arg)"
+		},
+		{
+			"curso": "Taller de Locución",
+			"data_curso": "(2003-Inst. Santa Trinidad-San Rafael-Mza.-Arg)"
+		},
+		{
+			"curso": "Edición De Sonido",
+			"data_curso": "(Sound Forge y Vegas Sound Pro)(2003-Inst. Santa Trinidad-San Rafael-Mza.-Arg) "
+		}
+	],
+	"portfolio": {
+		"url_folio": "http://"
+	},
+	"conocimientos": [{
+			"skill": "Html",
+			"progress": "91"
+		},
+		{
+			"skill": "CSS",
+			"progress": "72"
+		},
+		{
+			"skill": "Javascript",
+			"progress": "60"
+		},
+		{
+			"skill": "Java",
+			"progress": "45"
+		},
+		{
+			"skill": "Angular",
+			"progress": "91"
+		},
+		{
+			"skill": "Ingles",
+			"progress": "46"
+		},
+		{
+			"skill": "Dactilografía",
+			"progress": "100"
+		}
+	],
+
+	"contacto": {
+		"nombr_titul": "Luis Cespedes-Developer",
+		"direccion": "Residencial Rio Diamante M-G C-16.Las Heras.Mendoza.Argentina",
+		"email": "vampirochipi78@gmail.com",
+		"telefono": " +54 9 261509554"
+	}
+}

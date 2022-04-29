@@ -1,0 +1,46 @@
+<div name="conocimientos" id="conocimientos"></div> 
+<div class="section">
+    <div class="conocimientos">
+     
+         <img class="img_logo" src="https://cdn-icons-png.flaticon.com/512/1232/1232772.png">
+        <aside><h2>Conocimientos </h2></aside>            
+         <div class="center">
+           <div class="edit">
+                    <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                    <a href="#" class="fa fa-times"aria-hidden="true"></a>
+                    <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
+           </div>
+         
+          
+      <div class="progress" *ngFor="let conocimientos of conocimientosList">
+        
+      <circle-progress
+       [percent]="conocimientos.progress"
+       [radius]="80"
+       [title]="conocimientos.skill"
+       [showTitle]="true"
+       [showSubtitle]="true"
+       [showUnits]="false"
+       [showInnerStroke]="true"
+        [showZeroOuterStroke]="true"
+       [subtitle]="conocimientos.progress+'%'"
+       
+       [subtitleColor]="'black'"
+       [subtitleFontSize]="'15'"
+       
+       
+
+       [outerStrokeWidth]="15"
+       [innerStrokeWidth]="1"
+        [outerStrokeColor]="'#017bab'"
+        [innerStrokeColor]="'#017bab'"
+        
+         [animation]="true"
+         [animationDuration]="600"
+        ></circle-progress>
+     </div>
+  
+    </div>
+         
+  </div>
+</div>    

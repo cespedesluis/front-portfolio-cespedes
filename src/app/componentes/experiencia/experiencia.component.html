@@ -1,0 +1,31 @@
+<div name="experiencia" id="experiencia"></div> 
+<div class="section">
+    <div class="experiencia">
+         <img class="img_logo" src="https://cdn-icons-png.flaticon.com/512/1063/1063376.png">
+         <div class="edit">
+         <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+         <a href="#" class="fa fa-times"aria-hidden="true"></a>
+         <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
+      
+
+        </div>
+         <aside><h2> Experiencia </h2></aside>
+         <a name="experiencia" id="experiencia"></a>	            
+        <div class="education">
+        
+            <details *ngFor="let experiencia of experienciaList">
+                
+               <summary><b>{{experiencia.trabajo}}</b> </summary>
+                   <img class="img_education" [src]="experiencia.imag_exper" alt="No se puede mostrar imagen">
+                   <p>{{experiencia.tiempo_trab}}<br>{{experiencia.cargo_trab}}<br>
+                   {{experiencia.lugar_trab}}</p><br>
+   
+           </details>
+           
+            
+           <br>
+           </div>
+       </div> 
+  
+  
+    </div>

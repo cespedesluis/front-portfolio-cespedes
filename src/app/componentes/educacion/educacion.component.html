@@ -1,0 +1,29 @@
+<div name="educacion" id="educacion"></div> 
+<div class="section">
+   
+    <img class="img_logo" src="https://img.icons8.com/glyph-neue/344/education.png">
+    <aside><h2>Educación </h2></aside>
+    <div class="edit">
+                <a href="#" class="fa fa-pencil" aria-hidden="true"> </a>
+                <a href="#" class="fa fa-times"aria-hidden="true"></a>
+                <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
+             
+
+           </div>
+
+    
+<div class="education">
+    
+     
+ <details *ngFor="let educacion of educacionList">
+    <summary><b>{{educacion.educa}}</b> </summary>
+        <img class="img_education" [src]="educacion.imag_edu" alt="No se puede mostrar imagen">
+        <p>{{educacion.cursado}}<br>
+        Título: {{educacion.titulo}}<br>
+        {{educacion.lugar_educa}}</p>
+
+</details><br>
+
+<br>
+</div>
+</div>

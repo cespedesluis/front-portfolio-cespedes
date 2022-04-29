@@ -1,0 +1,23 @@
+<div name="cursos" id="cursos"></div> 
+<div class="section">
+    <div class="cursos">
+    <img class="img_logo" src="https://img.icons8.com/glyph-neue/344/idea.png" alt="No se Puede mostrar imagen">
+        <aside><h2>Cursos </h2></aside>
+        <div class="edit">
+                    <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
+                    <a href="#" class="fa fa-times"aria-hidden="true"></a>
+                    <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
+                 
+    
+               </div>
+
+
+       
+    
+        <div class="menu"  *ngFor="let cursos of cursosList" > 
+            <summary>{{cursos.curso}}</summary>
+            <div class="menudesp"> <p>{{cursos.data_curso}}</p></div>
+            <br>
+        </div>
+        
+</div>
