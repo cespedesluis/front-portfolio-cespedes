@@ -1,16 +1,181 @@
 <div class="section">
     <div class="portfolio">
-         <img class="img_logo" src="https://cdn-icons.flaticon.com/png/512/3222/premium/3222498.png?token=exp=1650502923~hmac=84f878f0e5162d7d425281b5c1a3f60a">
-         <div class="edit">
-         <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-         <a href="#" class="fa fa-times"aria-hidden="true"></a>
-         <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
-      
+        <img class="img_logo" src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+         <div class="edit" *ngIf="invalidLogin==false">
+            <button type="button" title="Agregar Proyecto" (click)="openModal(content)" class="fa fa-plus" aria-hidden="true"></button>
 
          </div>
-         <aside><h2> Portfolio </h2></aside>            
-        aca va pagina curricul cuando este terminado  
+         <aside><h2> MiPorfolio </h2></aside>
+         
+
+         <div class="=porfolio" *ngFor="let portfolio of porfolioList" >
+          <div class="edit" *ngIf="invalidLogin==false">
+            <button type="button" title="Modificar Proyecto" 
+            (click)="cargar(modifi,portfolio)" class="fa fa-pencil" 
+            aria-hidden="true"></button>
+          
+                         
+            <button type="button" title="Eliminar Proyecto" 
+         
+            (click)="onDelete(eliminar,portfolio)" 
+            
+            class="fa fa-times" aria-hidden="true"></button>
+         </div>
+             <aside><p style="font-size: 25px;"><b># {{portfolio.nombre_proyec}}</b></p></aside>
+              <p align="justify" style="font-size: 20px;" > {{portfolio.proyec_desc}}</p>
+              <div class="menu_url">
+                
+                <a class="btn btn-info"  [href]="portfolio.url_proyec" role="button" target="_blank"
+                 
+                  >Url del Proyecto 
+              </a>
+                
+              </div>
+
+         
+         
+            </div>     
+                
+
 
     </div>
-</div>    
+</div>  
+
+<!--ACA VA MODAL -->
+
+<ng-template #content let-modal>
+                       <div class="modal-header" data-bacdrop="static">
+                              <h2 class="modal-title" id="">Portfolio</h2>
+                              <button
+                                    type="button"
+                                    class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                      </div>
+                      <div class="modal-body" >
+                          <div class="form-group">
+                              <label for="">Nombre Del Proyecto</label>
+                              <input  type="text" name="educacion.educa"
+                            
+                              [(ngModel)]="portfolio.nombre_proyec" 
+                              class="form-control" 
+                              aria-describedby="emailHelp" placeholder="Ingrese Nombre del proyecto">
+  
+                              <label for="">Descripcion</label>
+                              <input  type="text"  class="form-control" 
+                              [(ngModel)]="portfolio.proyec_desc"
+                              aria-describedby="emailHelp" placeholder="Breve descripcion del proyecto ">
+                              
+                              <label for="">Url del Proyecto</label>
+                              <input  type="text"  class="form-control" 
+                              [(ngModel)]="portfolio.url_proyec"
+                              aria-describedby="emailHelp" placeholder="ingrese Url del proyecto">
+                              
+                            
+                          
+                              </div>
+                      </div>
+  
+                      
+                      <div class="modal-footer">
+                            <button
+                                  type="button"
+                                  class="btn btn-secondary"(click)="modal.dismiss('cancel click')">
+                                  Cerrar
+                              </button>
+                              <button 
+                                  type="button"
+                                  class="btn btn-info"  (click)="guardar()"  >
+                                  Guardar Cambios
+                              </button>
+
+
+                      </div>
+</ng-template>
+  
+
+
+<!--Modal para modificar -->
+<ng-template #modifi let-modal>
+  <div class="modal-header" data-bacdrop="static">
+         <h2 class="modal-title" id="">Modificar Portfolio</h2>
+         <button
+               type="button"
+               class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+ </div>
+ <div class="modal-body">
+     <div class="form-group">
+         <label for="">Nombre Del Proyecto</label>
+         <input  type="text" name="educacion.educa"
+         [(ngModel)]="portfolio.nombre_proyec" 
+         class="form-control" 
+         aria-describedby="emailHelp" placeholder="Ingrese Nombre del proyecto">
+
+         <label for="">Descripcion</label>
+         <input  type="text"  class="form-control" 
+         [(ngModel)]="portfolio.proyec_desc"
+         aria-describedby="emailHelp" placeholder="Breve descripcion del proyecto ">
+         
+         <label for="">Url del Proyecto</label>
+         <input  type="text"  class="form-control" 
+         [(ngModel)]="portfolio.url_proyec"
+         aria-describedby="emailHelp" placeholder="ingrese Url del proyecto">
+         
+       
+     
+         </div>
+ </div>
+
+ 
+ <div class="modal-footer">
+       <button
+             type="button"
+             class="btn btn-secondary"(click)="modal.dismiss('cancel click')">
+             Cerrar
+         </button>
+         <button 
+             type="button"
+             class="btn btn-info" (click)="editar(portfolio)">
+             Actualizar 
+         </button>
+
+
+ </div>
+</ng-template>
+
+<!--modal para eliminar-->
+<ng-template #eliminar let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Eliminar Experiencia</h2>
+    <button
+    type="button"
+    class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+</div>
+  <div class="modal-body">
+    <p>La eliminacion del registro es definitivo.</p>
+    
+    
+  </div>
+
+
+  <div class="modal-footer">
+    <button
+          type="button"
+          class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+          Cancelar
+      </button>
+      <button 
+          type="button"
+          class="btn btn-info" (click)="delete(portfolio)">
+          Eliminar
+        </button>
+  </div>
+
+
+
+</ng-template>
+
+
+
+
+
+
 

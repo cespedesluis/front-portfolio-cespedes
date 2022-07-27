@@ -3,21 +3,236 @@
     <div class="cursos">
     <img class="img_logo" src="https://img.icons8.com/glyph-neue/344/idea.png" alt="No se Puede mostrar imagen">
         <aside><h2>Cursos </h2></aside>
-        <div class="edit">
-                    <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-                    <a href="#" class="fa fa-times"aria-hidden="true"></a>
-                    <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
-                 
+        <div class="edit" *ngIf="invalidLogin==false">
+            <button type="button" title="Agregar Curso" (click)="openModal(content)" class="fa fa-plus" aria-hidden="true"></button>
     
-               </div>
+            </div>
 
 
        
     
         <div class="menu"  *ngFor="let cursos of cursosList" > 
             <summary>{{cursos.curso}}</summary>
-            <div class="menudesp"> <p>{{cursos.data_curso}}</p></div>
+            
+            <div class="menudesp"> <p>{{cursos.data_curso}}</p>
+                <div class="edit" *ngIf="invalidLogin==false">
+                    <button type="button" title="Modifica Curso" (click)="cargar(modifi,cursos)" class="fa fa-pencil" aria-hidden="true"></button>
+                                 
+                    <button type="button" title="Eliminar Curso" (click)="onDelete(eliminar,cursos)" class="fa fa-times" aria-hidden="true"></button>
+                 </div>
+           <p>{{cursos.ano_curso}}-{{cursos.lugar_curso}}</p>
+           <p>{{cursos.ciudad_curso}}-{{cursos.prov_curso}}-{{cursos.pais_}}</p>
+        </div>
             <br>
         </div>
         
 </div>
+<!--ACA VA EL MODAL DE DATOS-->
+
+<ng-template #content let-modal>
+                 <div class="modal-header" data-bacdrop="static">
+                                <h2 class="modal-title" id="exampleModalLabel">Cursos</h2>
+                                <button
+                      type="button"
+                      class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                                
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nombre Del Curso</label>
+                                <input  type="text" name="educacion.educa" class="form-control" 
+                                [(ngModel)]="cursos.curso"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Nombre del Curso">
+    
+                                <label for="exampleInputEmail1">Titulo Obtenido</label>
+                                <input  type="text"  class="form-control" 
+                                [(ngModel)]="cursos.data_curso"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Titulo Obtenido ">
+                                
+                                <label for="exampleInputEmail1">Año del Curso</label>
+                                <input  type="number" min="1900" max="2099" 
+                                value="2022" class="form-control" 
+                                [(ngModel)]="cursos.ano_curso"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Año de realizacion ">
+                        
+                                <label for="exampleInputEmail1">Nombre de la institucion</label>
+                                <input  type="text"  class="form-control" 
+                                [(ngModel)]="cursos.lugar_curso"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la institucion donde se dicto">
+                        
+                                 <br>        
+                                <p>Lugar Del Curso:</p>
+                                <label for="exampleInputEmail1">Ciudad</label>
+                                <input  type="text" name="educa" class="form-control" 
+                                [(ngModel)]="cursos.ciudad_curso"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ciudad">
+    
+                                <label for="exampleInputEmail1" ></label>
+                                    Provincia:
+                                    
+                                    <select name="provincia" [(ngModel)]="cursos.prov_curso" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <option>Mendoza</option>
+                                        <option>Buenos Aires</option>
+                                        <option>CABA</option>
+                                        <option>Catamarca</option>
+                                        <option>Chaco</option>
+                                        <option>Chubut</option>
+                                        <option>Cordoba</option>
+                                        <option>Corrientes</option>
+                                        <option>Entre Ríos</option>
+                                        <option>Formosa</option>
+                                        <option>Jujuy</option>
+                                        <option>La pampa</option>
+                                        <option>San Juan</option>
+                                        <option>San Luis</option>
+                                        <option>La Rioja</option>
+                                        <option>Tucumán</option>
+                                        <option>Salta</option>
+                                        [(ngModel)]="provincia"
+                                    </select>
+                                
+                                <label for="exampleInputEmail1">Pais</label>
+                                <input  type="text" name="educa" class="form-control" 
+                                [(ngModel)]="cursos.pais_"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Pais">
+                                
+                            
+                                </div>
+                        </div>
+    
+                        
+                        <div class="modal-footer">
+                              <button
+                                    type="button"
+                                    class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                                    Cerrar
+                                </button>
+                                <button 
+                                    type="button"
+                                    class="btn btn-info" (click)="guardar()">
+                                    Guardar 
+                                </button>
+                        </div>
+</ng-template>
+
+<!--MODEL PARA ELIMINAR-->
+
+<ng-template #eliminar let-modal>
+    <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLabel">Eliminar Curso</h2>
+      <button
+      type="button"
+      class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+  </div>
+    <div class="modal-body">
+      <p>La eliminacion del registro es definitivo.</p>
+      
+      
+    </div>
+
+
+    <div class="modal-footer">
+      <button
+            type="button"
+            class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+            Cancelar
+        </button>
+        <button 
+            type="button"
+            class="btn btn-info" (click)="delete(cursos)">
+            Eliminar
+          </button>
+    </div>
+
+
+
+</ng-template>
+
+<!--ACA VA EL MODAL PARA MODIFICAR -->
+
+<ng-template #modifi let-modal>
+    <div class="modal-header" data-bacdrop="static">
+                   <h2 class="modal-title" id="exampleModalLabel">Cursos</h2>
+                   <button
+         type="button"
+         class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                   
+           </div>
+           <div class="modal-body">
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Nombre Del Curso</label>
+                   <input  type="text" name="educacion.educa" class="form-control" 
+                   [(ngModel)]="cursos.curso"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Nombre del Curso">
+
+                   <label for="exampleInputEmail1">Titulo Obtenido</label>
+                   <input  type="text"  class="form-control" 
+                   [(ngModel)]="cursos.data_curso"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Titulo Obtenido ">
+                   
+                   <label for="exampleInputEmail1">Año del Curso</label>
+                   <input  type="number"  min="1900" max="2099" 
+                   value="2022" class="form-control" 
+                   [(ngModel)]="cursos.ano_curso"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Año de realizacion ">
+           
+                   <label for="exampleInputEmail1">Nombre de la institucion</label>
+                   <input  type="text"  class="form-control" 
+                   [(ngModel)]="cursos.lugar_curso"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la institucion donde se dicto">
+           
+                    <br>        
+                   <p>Lugar Del Curso:</p>
+                   <label for="exampleInputEmail1">Ciudad</label>
+                   <input  type="text" name="educa" class="form-control" 
+                   [(ngModel)]="cursos.ciudad_curso"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ciudad">
+
+                   <label for="exampleInputEmail1"></label>
+                       Provincia:
+                       
+                       <select name="provincia" class="form-control" [(ngModel)]="cursos.prov_curso"id="exampleInputEmail1" aria-describedby="emailHelp">
+                           <option>Mendoza</option>
+                           <option>Buenos Aires</option>
+                           <option>CABA</option>
+                           <option>Catamarca</option>
+                           <option>Chaco</option>
+                           <option>Chubut</option>
+                           <option>Cordoba</option>
+                           <option>Corrientes</option>
+                           <option>Entre Ríos</option>
+                           <option>Formosa</option>
+                           <option>Jujuy</option>
+                           <option>La pampa</option>
+                           <option>San Juan</option>
+                           <option>San Luis</option>
+                           <option>La Rioja</option>
+                           <option>Tucumán</option>
+                           <option>Salta</option>
+                       </select>
+                   
+                   <label for="exampleInputEmail1">Pais</label>
+                   <input  type="text" name="educa" class="form-control" 
+                   [(ngModel)]="cursos.pais_"
+                   id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Pais">
+                   
+               
+                   </div>
+           </div>
+
+           
+           <div class="modal-footer">
+                 <button
+                       type="button"
+                       class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                       Cerrar
+                   </button>
+                   <button 
+                       type="button"
+                       class="btn btn-info" (click)="editar(cursos)">
+                       Guardar Cambios
+                   </button>
+           </div>
+</ng-template>
+
+

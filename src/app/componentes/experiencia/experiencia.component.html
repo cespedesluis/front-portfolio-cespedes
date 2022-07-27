@@ -2,11 +2,8 @@
 <div class="section">
     <div class="experiencia">
          <img class="img_logo" src="https://cdn-icons-png.flaticon.com/512/1063/1063376.png">
-         <div class="edit">
-         <a href="#" class="fa fa-pencil" aria-hidden="true"></a>
-         <a href="#" class="fa fa-times"aria-hidden="true"></a>
-         <a href="#" class="fa fa-check" aria-hidden="true"> </a> 
-      
+         <div class="edit" *ngIf="invalidLogin==false">
+            <button type="button" title="Agregar Experiencia" (click)="openModal(content)" class="fa fa-plus" aria-hidden="true"></button>
 
         </div>
          <aside><h2> Experiencia </h2></aside>
@@ -16,9 +13,16 @@
             <details *ngFor="let experiencia of experienciaList">
                 
                <summary><b>{{experiencia.trabajo}}</b> </summary>
-                   <img class="img_education" [src]="experiencia.imag_exper" alt="No se puede mostrar imagen">
-                   <p>{{experiencia.tiempo_trab}}<br>{{experiencia.cargo_trab}}<br>
-                   {{experiencia.lugar_trab}}</p><br>
+
+               <div class="edit" *ngIf="invalidLogin==false">
+                <button type="button" title="Modificar Experiencia" (click)="cargar(modifi,experiencia)" class="fa fa-pencil" aria-hidden="true"></button>
+                             
+                <button type="button" title="Eliminar Experiencia" (click)="onDelete(eliminar,experiencia)" class="fa fa-times" aria-hidden="true"></button>
+             </div>
+
+                   <img class="img_education" [src]="experiencia.url_trabajo" alt="No se puede mostrar imagen">
+                   <p>{{experiencia.ini_trabajo}}/{{experiencia.fin_trabajo}}<br>{{experiencia.cargo_trabajo}}<br>
+                   {{experiencia.ciudad_trabajo}}-{{experiencia.prov_trabajo}}-{{experiencia.pais_trabajo}}</p><br>
    
            </details>
            
@@ -29,3 +33,239 @@
   
   
     </div>
+
+    <!--ACA VA EL MODOL-->
+
+   
+    <ng-template #content let-modal>
+                             <div class="modal-header" data-bacdrop="static">
+                                    <h2 class="modal-title" id="exampleModalLabel">Experiencia</h2>
+                                    <button
+                                    type="button"
+                                    class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Trabajo</label>
+                                    <input  type="text" name="educacion.educa" class="form-control" 
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" 
+                                    [(ngModel)]="experiencia.trabajo"
+                                    placeholder="Ingrese Nombre de la Empresa">
+        
+                                    <label for="exampleInputEmail1">Ocupación</label>
+                                    <input  type="text"  class="form-control" id="exampleInputEmail1" 
+                                    [(ngModel)]="experiencia.cargo_trabajo"
+                                    aria-describedby="emailHelp" placeholder="Ingrese la ocupacion">
+                            
+                                    <label for="exampleInputEmail1">Imagen del trabajo</label>
+                                    <input  type="text" name="url_labor" class="form-control" 
+                                    [(ngModel)]="experiencia.url_trabajo" 
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Url de la imagen ">
+        
+                                    <label for="exampleInputEmail1">Fecha de Inicio</label>
+                                    <input  type="month" name="educa" class="form-control" 
+                                    [(ngModel)]="experiencia.ini_trabajo"
+                                     id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    
+                                    <label for="exampleInputEmail1">Fecha de Fin</label>
+                                    <input  type="month" name="educa" class="form-control" 
+                                    [(ngModel)]="experiencia.fin_trabajo"
+                                     id="exampleInputEmail1" aria-describedby="emailHelp" >
+        
+                                    <br>
+                                    <p>Lugar De Trabajo:</p>
+                                    <label for="exampleInputEmail1">ciudad</label>
+                                    <input  type="text" name="ciudad" class="form-control" 
+                                    [(ngModel)]="experiencia.ciudad_trabajo"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese ciudad del trabajo">
+    
+                                    <label for="exampleInputEmail1"></label>
+                                        Provincia:
+                                        
+                                        <select name="provincia" class="form-control" 
+                                        [(ngModel)]="experiencia.prov_trabajo"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <option>Mendoza</option>
+                                            <option>Buenos Aires</option>
+                                            <option>CABA</option>
+                                            <option>Catamarca</option>
+                                            <option>Chaco</option>
+                                            <option>Chubut</option>
+                                            <option>Cordoba</option>
+                                            <option>Corrientes</option>
+                                            <option>Entre Ríos</option>
+                                            <option>Formosa</option>
+                                            <option>Jujuy</option>
+                                            <option>La pampa</option>
+                                            <option>San Juan</option>
+                                            <option>San Luis</option>
+                                            <option>La Rioja</option>
+                                            <option>Tucumán</option>
+                                            <option>Salta</option>
+                                        </select>
+                                    
+                                    <label for="exampleInputEmail1">Pais</label>
+                                    <input  type="text" name="educa" class="form-control" 
+                                    [(ngModel)]="experiencia.pais_trabajo"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Pais del trabajo">
+                                    
+                                    
+        
+                                   
+        
+        
+                                
+                                </div>
+                            </div>
+        
+                            
+                            <div class="modal-footer">
+                                  <button
+                                        type="button"
+                                        class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                                        Cerrar
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        class="btn btn-info" (click)="guardar()">
+                                        Guardar 
+                                    </button>
+                            </div>
+    </ng-template>
+
+    <!--MODEL PARA MODIFICAR-->
+
+    <ng-template #modifi let-modal>
+      <div class="modal-header" data-bacdrop="static">
+             <h2 class="modal-title" id="exampleModalLabel">Experiencia</h2>
+             <button
+             type="button"
+             class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+     </div>
+     <div class="modal-body">
+         <div class="form-group">
+             <label for="exampleInputEmail1">Trabajo</label>
+             <input  type="text" name="educacion.educa" class="form-control" 
+             id="exampleInputEmail1" aria-describedby="emailHelp" 
+             [(ngModel)]="experiencia.trabajo"
+             placeholder="Ingrese Nombre de la Empresa">
+
+             <label for="exampleInputEmail1">Ocupación</label>
+             <input  type="text"  class="form-control" id="exampleInputEmail1" 
+             [(ngModel)]="experiencia.cargo_trabajo"
+             aria-describedby="emailHelp" placeholder="Ingrese la ocupacion">
+     
+             <label for="exampleInputEmail1">Imagen del trabajo</label>
+             <input  type="text" name="url_labor" class="form-control" 
+             [(ngModel)]="experiencia.url_trabajo" 
+             id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Url de la imagen ">
+
+             <label for="exampleInputEmail1">Fecha de Inicio</label>
+             <input  type="month" name="educa" class="form-control" 
+             [(ngModel)]="experiencia.ini_trabajo"
+              id="exampleInputEmail1" aria-describedby="emailHelp" >
+             
+             <label for="exampleInputEmail1">Fecha de Fin</label>
+             <input  type="month" name="educa" class="form-control" 
+             [(ngModel)]="experiencia.fin_trabajo"
+              id="exampleInputEmail1" aria-describedby="emailHelp" >
+
+             <br>
+             <p>Lugar De Trabajo:</p>
+             <label for="exampleInputEmail1">ciudad</label>
+             <input  type="text" name="ciudad" class="form-control" 
+             [(ngModel)]="experiencia.ciudad_trabajo"
+             id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese ciudad del trabajo">
+
+             <label for="exampleInputEmail1"></label>
+                 Provincia:
+                 
+                 <select name="provincia" class="form-control" 
+                 [(ngModel)]="experiencia.prov_trabajo"
+                 id="exampleInputEmail1" aria-describedby="emailHelp">
+                     <option>Mendoza</option>
+                     <option>Buenos Aires</option>
+                     <option>CABA</option>
+                     <option>Catamarca</option>
+                     <option>Chaco</option>
+                     <option>Chubut</option>
+                     <option>Cordoba</option>
+                     <option>Corrientes</option>
+                     <option>Entre Ríos</option>
+                     <option>Formosa</option>
+                     <option>Jujuy</option>
+                     <option>La pampa</option>
+                     <option>San Juan</option>
+                     <option>San Luis</option>
+                     <option>La Rioja</option>
+                     <option>Tucumán</option>
+                     <option>Salta</option>
+                     [(ngModel)]="provincia"
+                 </select>
+             
+             <label for="exampleInputEmail1">Pais</label>
+             <input  type="text" name="educa" class="form-control" 
+             [(ngModel)]="experiencia.pais_trabajo"
+             id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Pais del trabajo">
+             
+             
+
+            
+
+
+         
+         </div>
+     </div>
+
+     
+     <div class="modal-footer">
+           <button
+                 type="button"
+                 class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                 Cerrar
+             </button>
+             <button 
+                 type="button"
+                 class="btn btn-info" (click)="guardar()">
+                 Guardar Cambios
+             </button>
+     </div>
+</ng-template>
+
+<!--MODEL PARA ELIMINAR-->
+
+<ng-template #eliminar let-modal>
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Eliminar Experiencia</h2>
+              <button
+              type="button"
+              class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+          </div>
+            <div class="modal-body">
+              <p>La eliminacion del registro es definitivo.</p>
+              
+              
+            </div>
+
+
+            <div class="modal-footer">
+              <button
+                    type="button"
+                    class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                    Cancelar
+                </button>
+                <button 
+                    type="button"
+                    class="btn btn-info" (click)="delete(experiencia)">
+                    Eliminar
+                  </button>
+            </div>
+
+
+
+</ng-template>
+
+
+        
+
+

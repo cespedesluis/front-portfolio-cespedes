@@ -1,17 +1,30 @@
 
 <header>  
-  <div id="header_sup">           
+  <div id="header_sup" >  
+
+
     <div id="menu_gral">
-      <a href="#"><button type="button" class="btn btn-info">Ingresar
+    <div *ngFor="let usuario of usuarioList">
+      <div *ngIf="invalidLogin==false">
+      <button type="button" class="btn btn-info"
+        (click)="openModal(login,usuario)"
+        >Ingresar
         </button>
-      </a>
+      </div>
+      <div *ngIf="invalidLogin==true">
+        <button type="button" class="btn btn-info"
+        (click)="openModal(closeLogin,usuario)"
+        >Salir
+        </button>
+      </div>
+    </div> 
     </div>
   
           <div class="social">
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-youtube"></a>
-              <a href="#" class="fa fa-linkedin"> </a> 
-              <a href="#" class="fa fa-github" ></a>
+              <a href="https://twitter.com/vampirochipi" target="_black" class="fa fa-twitter"></a>
+              <a href="https://www.youtube.com/channel/UCXaofAs6Qx6VIPS4QGnv6AQ" target="_blank" class="fa fa-youtube"></a>
+              <a href="https://www.linkedin.com/in/LuisCespedesMza" target="_blank" class="fa fa-linkedin"> </a> 
+              <a href="https://github.com/cespedesluis" target="_black" class="fa fa-github" ></a>
            
         
             </div>
@@ -23,11 +36,136 @@
            </div>
           
      
+         
   
-    
-           <div id="header_center" class="section">
-            
-            <img class="img-circle" [src]="miencabezado.respecto_mi.imagen_face">
-           
-           </div>   
   </header>
+
+  <!--MODAL DE LOGIN-->
+
+  <ng-template #login let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Iniciar Sesion
+
+        </h2>
+        <button
+                      type="button"
+                      class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+     </div>
+     <div class="modal-body" >
+                
+
+                  <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" [(ngModel)]="email2" name="email"
+                    class="form-control" aria-describedby="emailHelp" 
+                    id="exampleinputemail"
+                    required minlength="15"
+                    required email
+                    #Email="ngModel"
+          
+                    [ngClass]="{'is-invalid':Email.invalid && Email.touched,'is-valid':!Email.invalid && Email.touched}"
+                    placeholder="Ingrese Email">
+                    <div *ngIf="Email.invalid && Email.touched,"
+                    class="alert">
+                    <p *ngIf="Email.hasError('required')" class="text-danger">El email es requirido</p>
+                    
+                    <p *ngIf="Email.hasError('email')" class="text-danger">
+                      El formato de email no es valido</p>
+                    </div>
+
+                    
+                  </div>
+                 
+
+
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" [(ngModel)]="password2" name="password"
+                    class="form-control" aria-describedby="emailHelp" placeholder="Ingrese Password"
+                    id="exampleInputPassword"
+                    required minlength="8"
+                    #Password="ngModel"
+          
+                    [ngClass]="{'is-invalid':Password.invalid && Password.touched,'is-valid':!Password.invalid && Password.touched}"
+                    placeholder="Ingrese Password">
+                    <div *ngIf="Password.invalid && Password.touched,"
+                    class="alert">
+                    <p *ngIf="Email.hasError('required')" class="text-danger">
+                      El password es requirido</p>
+                    
+                    
+                    </div>
+                  
+                    </div>
+
+                  </div>
+
+                  
+                  <div class="modal-footer">
+                      <button
+                            type="button"
+                            class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                            Cerrar
+                        </button>
+                        <button 
+                            type="button"
+                            class="btn btn-info"(click)="guardar(email2,password2,incorrecto,usuario)">
+                            Aceptar
+                        </button>
+                  </div>
+                    
+    
+</ng-template>
+
+<!--Aca se cierra el usuario -->
+
+<ng-template #closeLogin let-modal>
+  <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLabel"><h4>Cerrar la sesión</h4>
+
+      </h2>
+      
+   </div>
+   <div class="modal-body">
+    </div>
+
+ 
+ <div class="modal-footer">
+     <button
+          type="button"
+          class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+          Cancelar
+      </button>
+      <button 
+          type="button"
+          class="btn btn-info"(click)="Salir()">
+          Aceptar
+      </button>
+ </div>
+</ng-template>
+
+<!--mensaje de usuario o contraseña incorrecta-->
+
+<ng-template #incorrecto let-modal>
+  <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLabel">
+       <h4> Email o Password incorrectos</h4>
+
+      </h2>
+      <button
+          type="button"
+          class="btn btn-info" (click)="modal.dismiss('cancel click')">
+          Aceptar
+      </button>
+         
+    </div>
+
+ 
+ 
+</ng-template>
+
+
+
+
+
