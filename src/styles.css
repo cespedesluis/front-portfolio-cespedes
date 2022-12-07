@@ -1,0 +1,391 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+
+body 
+{
+	
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0;
+    background-image: url('/assets/img/imagen_proyect/imagen_fondo.jpg');
+    background-attachment: fixed;
+   
+    height: 100%;
+    width: 100%;
+    background-size: cover; 
+    font-family: 'Poppins', sans-serif;
+    
+        
+}
+
+.section {
+    background-color: rgba(214, 231, 245, 0.6);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    border: 2px solid rgba(248, 248, 243, 0.2);
+    
+     }
+
+.img_logo {
+        max-height: 50px;
+        max-width: 50px;
+        border-radius: 10px;
+        float: left;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+       
+}
+
+ .img_super{
+  max-height: 80px;
+  max-width: 80px;
+  border-radius: 10px;
+  float: left;
+ }
+ #header_sup{
+  position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    padding: 10px 15px;
+    background-color:#4f9ab8;
+    font-size: 20px;
+    z-index: 1000;
+   
+ }
+ #header_sup aside {
+     font-size: 10px;
+     font-weight: bold;
+     padding-top: 15px;
+     color: white;
+   
+     
+ }
+.social {
+  min-width: 20px;
+  float: right;
+  
+}
+
+.social a {
+  text-decoration: none;
+  font-size: 15px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #314652;
+  color: #f1f1f1;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+ 
+}
+.social a:hover {
+  transform: scale(1.2);
+}
+
+
+ .menu01{
+     height: 40px;
+        width: 40px;
+        border-radius: 3px;
+      
+        float: left;
+
+  }
+  .btn-info{
+    color: white;
+    background-color: #017bab;
+    border:none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+
+  }  
+ /* menu desplegable del login*/
+
+#menu_gral {
+    
+    padding-right: 50px;
+    float: right;
+    padding-left: 10px;
+    
+    
+}
+
+
+
+
+    
+
+/** botones de edicion**/
+.edit{
+    text-align: right;
+}
+.edit button{
+  text-decoration: none;
+  font-size: 15px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #314652;
+  color: #f1f1f1;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+  border: none;
+}
+.edit button:hover{
+    transform: scale(1.2);
+    background-color: #017bab;
+
+}
+
+
+  
+   
+
+
+
+
+/*final menu*/
+
+
+#header_center {
+    height: 150px;
+    width: 100%;
+   margin-top: 4.5%;
+   border-radius: 10px;
+    background-size: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+ }
+
+.img-circle {
+    height: 110px;
+    width: 110px; 
+    
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.reset {
+    clear: both;
+}
+
+ol { list-style-type: disc; }
+
+.data_name details>summary {
+  width: 250px;
+background-color: #017bab;  
+list-style-type: none;
+outline: none;
+cursor: pointer;
+
+padding: 5px;
+
+transition: all .4s ease-in-out;
+font-size: 30px;
+border-radius: 15px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+color: white;
+ }
+
+/*educacion*/
+details>summary {
+    width: 370px;
+  background-color: #017bab;  
+  list-style-type: none;
+  outline: none;
+  cursor: pointer;
+  
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+  color: white;
+  font-size: 20px;
+
+  
+}
+
+details>summary:hover { 
+ transform: scale(1.05);
+
+  }
+ 
+
+details>summary::-webkit-details-marker {
+  display: none;
+  
+}
+
+details>summary::before {
+  content: '+ ';
+}
+
+details[open]>summary::before {
+  content: '- ';
+}
+
+details[open]>summary {
+  margin-bottom: 0.5rem;
+}
+.education p {
+    min-height: 80px;
+    width: 380px;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    background-color: #dfe1e2;
+   
+   text-align: left;
+   vertical-align: middle;
+}
+
+h2 {
+    
+    font-size: 40px;
+}
+
+.img_education{
+       
+        height: 80px;
+        width: 80px;
+        border-radius: 20px;
+        float: left;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+       
+
+}
+
+/*cursos*/
+
+
+
+
+.menu>summary { 
+     width: 370px;
+  background-color: #017bab;  
+  list-style-type: none;
+  outline: none;
+ 
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+  color: white;
+  font-size: 20px;
+ 
+ 
+   }
+   
+ 
+
+.menudesp {
+ 
+  display: none;width: 365px;
+  background-color: #dcf3fc;  
+  list-style-type: none;
+  outline: none;
+  color: black;
+   
+  
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  
+  
+
+  
+
+ }
+  .menu:hover{
+      transform: scale(1.05);
+      transition-duration: 0.5s;
+        cursor: pointer; 
+ }
+  
+ .menu:hover>.menudesp { 
+  display: block;
+ 
+      transition-duration: 01s;
+  }
+/* conocimientos*/ 
+
+
+.progress{
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  text-align: center;
+}
+
+/***************************************/
+
+
+  /****footer**/
+ 
+   
+
+
+  .footer{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    color: black;
+    background-color: rgba(214, 231, 245, 0.6);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    border: 2px solid rgba(248, 248, 243, 0.2);
+}
+
+.pie_pagina01{
+    width: 60%;
+  
+    }
+
+.pie_pagina02{
+    
+    float: right;
+   
+    }  
+
+
+
+ .pie_pagina01 a{
+     color: black;
+     text-decoration: none;
+ }  
+
+ .pie_pagina01 a:hover{
+     color:#017bab;
+     transform: scale(1.08);
+    transition: all .4s ease-in-out;
+    
+ } 
+
+ .pie_pagina02 a{
+     color: black;
+     text-decoration: none;
+ }  
+ .pie_pagina02  a:hover{
+     color:#017bab;
+    
+    transition: all .4s ease-in-out;
+    
+ } 
+
+/* portfolio*/
+
+
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';

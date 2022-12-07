@@ -1,0 +1,185 @@
+{
+	"respecto_mi": {
+		"url_face": "https://media-exp1.licdn.com/dms/image/C4E03AQH4AVut0TDJBw/profile-displayphoto-shrink_100_100/0/1516508517560?e=2147483647&v=beta&t=KecATLBaKiZiQ8c6zXc_u7FUfrsTj3ScV4U9Owv2hZM",
+		"nombre": "Luis",
+		"apellido":"Cespedes",
+		"fecha_nac": "15 de octubre de 1978",
+		"ciudad_nac":"San Rafael",
+		"prov_nac": "Mendoza",
+		"pais_nac": "Argentina",
+		"acerca_mi": "Como Técnico Electromecánico logre conocer el funcionamiento del mundo de la energía, sin embargo ese camino de circuitos y cables solo me mostraba una parte superflua del todo, al convertirme en Operador de equipos informáticos, mi acceso a ordenadores me llevaría a poder entender como se accionan ciertos mecanismos que vemos a diario, pero faltaba más, poder crearlos, y así como Full Stack Developer Jr. pude mostrar mi potencial signado como siempre por la curiosidad, que al fin y al cabo es el motor que hace funcionar todo."
+	},
+
+	"educacion": [{
+			"url_educa": "/assets/img/imagen_proyect/logo_merin.png",
+			"educa": "Escuela Técnica 4-124 Reynaldo Merin",
+			"titulo": "Técnico Mecánico Electricista",
+			"ini_educa": " 1991 ",
+			"fin_educa" : "1997",
+			"ciudad_educa": "San Rafael",
+			"prov_educa":"Mendoza",
+			"pais_educa":"Argentina"
+		},
+		{
+			"url_educa": "/assets/img/imagen_proyect/logo_ies.png",
+			"educa": "I.E.S. En Informática 9-012",
+			"titulo": "Operador de Equipos informaticos",
+			"ini_educa": "1998",
+			"fin_educa": "1999",
+			"ciudad_educa": "San Rafael",
+			"prov_educa":"Mendoza",
+			"pais_educa":"Argentina"
+		},
+		{
+			"url_educa": "/assets/img/imagen_proyect/logo_argprom.jpg",
+			"educa": "INTI Argentina Programa",
+			"titulo": "Full Stack Developer Jr.",
+			"ini_educa": "2021",
+			"fin_educa":"2022",
+			"ciudad_educa": "Ciudad",
+			"prov_educa":"Mendoza",
+			"pais_educa":"Argentina"
+		}
+	],
+
+	"experiencia": [{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_amee.png",
+			"trabajo": "A.M.E.E",
+			"ini_trabajo": "2001 (FEB)",
+			"fin_trabajo": "2006(AGO)",
+			"cargo_trabajo": "Radioperador y despachador de emergencias medicas",
+			"ciudad_trabajo": "San Rafael",
+			"prov_trabajo":"Mendoza",
+			"pais_trabajo":"Argentina"
+		},
+		{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_vibrafm.png",
+			"trabajo": "FM VIBRA 100.5 – FM CADENA 100",
+			"ini_trabajo": "2005 (FEB)",
+			"fin_trabajo": "2008(DIC)",
+			"cargo_trabajo": "Conducción y producción de programa de programa radio semanal y diario",
+			"ciudad_trabajo": "San Rafael",
+			"prov_trabajo":"Mendoza",
+			"pais_trabajo":"Argentina"
+		},
+		{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_delsol.png",
+			"trabajo": "FM 100.9 ESTACION DEL SOL",
+			"ini_trabajo": "2009 (ENE)",
+			"fin_trabajo":"2011 (DIC)",
+			"cargo_trab": "Conducción y producción de programa de radio semanal y diario. Edicion de programa de radio semanal. Musicalizacion de programa de radio semanal.",
+			"ciudad_trabajo": "Ciudad",
+			"prov_trabajo":"Mendoza",
+			"pais_trabajo":"Argentina"
+		},
+		{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_vendimia.png",
+			"trabajo": "FIESTA NACIONAL DE LA VENDIMIA",
+			"ini_trabajo": "2012(MZO)",
+			"fin_trabajo": "2012 (MZO)",
+			"cargo_trabajo": " Conducción segunda repetición “Te miro… Vendimia de colores”",
+			"ciudad_trabajo": "Ciudad",
+			"prov_trabajo":"Mendoza",
+			"pais_trabajo":"Argentina"
+		},
+		{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_playup.png",
+			"trabajo": "PLAY UP ENTERTAIMENT",
+			"ini_trabajo": "2012 (JUN)",
+			"fin_trabajo":"2018(MZO)",
+			"cargo_trabajo": "Conducción y Supervisión de Activaciones de “Fernet Branca.",
+			"ciudad_trabajo": "CABA",
+			"prov_trabajo":"Buenos Aires",
+			"pais_trabajo":"Argentina"
+		},
+		{
+			"url_trabajo": "/assets/img/imagen_proyect/logo_atiempo.png",
+			"trabajo": "A TIEMPO EMERGENCIAS MEDICAS",
+			"ini_trabajo": "Abril 2012",
+			"fin_trabajo": "actual",
+			"cargo_trabajo": "Radioperador y despachador de emergencias medicas",
+			"ciudad_trabajo": "Ciudad",
+			"prov_trabajo":"Mendoza",
+			"pais_trabajo":"Argentina"
+		}
+	],
+	"cursos": [{
+			"curso": "Dactilografía",
+			"data_curso": " (Tipeado y Dictado)",
+			"ano_curso": "1993",
+			"lugar_curso":"Sind Luz y Fuerza",
+			"ciudad_curso": "San Rafael",
+			"prov_curso":"Mendoza",
+			"pais_":"Argentina"
+		},
+		{
+			"curso": "Programación de PLC",
+			"data_curso": "Programador Lógico Controlable",
+			"ano_curso":"1997",
+			"lugar_curso":"Escuela Técnica Reynaldo Merin",
+			"ciudad_curso": "San Rafael",
+			"prov_curso":"Mendoza",
+			"pais_":"Argentina"
+		},
+		{
+			"curso": "Locución y Producción Integral De Radio",
+			"data_curso": "Taller integral de locucion",
+			"ano_curso":"2001",
+		     "lugar_curso":"Inst. Santa Trinidad",
+			 "ciudad_curso": "San Rafael",
+			"prov_curso":"Mendoza",
+			"pais_":"Argentina"
+		},
+		
+		{
+			"curso": "Edición De Sonido",
+			"data_curso": "Sound Forge y Vegas Sound Pro",
+			"ano_curso":"2003",
+			"lugar_curso":"Inst. Santa Trinidad",
+			"ciudad_curso": "San Rafael",
+			"prov_curso":"Mendoza",
+			"pais_":"Argentina"
+		}
+	],
+	"portfolio": {
+		"nombre_proyec":"Porfolio Web",
+		"proyec_desc":"Construcción del Porfolio Web para Argentina Programa, front-end, back-end",
+		"url_proyec": "http://google.com"
+	},
+	"conocimientos": [{
+			"skill": "Html",
+			"progress": "91"
+		},
+		{
+			"skill": "CSS",
+			"progress": "72"
+		},
+		{
+			"skill": "Javascript",
+			"progress": "60"
+		},
+		{
+			"skill": "Java",
+			"progress": "45"
+		},
+		{
+			"skill": "Angular",
+			"progress": "91"
+		},
+		{
+			"skill": "Ingles",
+			"progress": "46"
+		},
+		{
+			"skill": "Dactilografía",
+			"progress": "100"
+		}
+	],
+
+	"contacto": {
+		"nombre_dev": "Luis Cespedes",
+		"direccion": "Residencial Rio Diamante M-G C-16.Las Heras.Mendoza.Argentina",
+		"email": "vampirochipi78@gmail.com",
+		"telefono": " +54 9 261509554"
+	}
+}

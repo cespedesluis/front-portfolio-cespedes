@@ -1,0 +1,221 @@
+<div *ngFor="let persona of personaList">
+    
+    <div id="header_center" class="section" [style.background-image]="'url(' + persona.url_baner+ ')'"
+    >
+      
+      <img class="img-circle" [src]="persona.url_face">
+    </div>
+</div>  
+    
+    
+    <div name="respecto_a_mi" id="respecto_a_mi"></div> 
+      <div class="section">
+  
+    <div id="header_name">
+          <img class="img_logo" src="https://img.icons8.com/glyph-neue/452/name.png">
+           
+            
+
+           
+             <div *ngFor="let persona of personaList">
+                <div class="edit" *ngIf="invalidLogin==false">
+                    
+                    <button type="button" title="Modifica Datos" (click)="cargar(modifi,persona)" class="fa fa-pencil" aria-hidden="true"></button>
+                   
+              </div>
+          <aside><h2>{{persona.nombre}} {{persona.apellido}}</h2> </aside><br>
+         
+                <div class="data_name" >
+                  <details>
+                      <summary>  Respecto a mí  </summary>
+                            <div class="=sobremi" >
+                             
+                                <aside><p><b> {{persona.fecha_nac}}</b></p></aside>
+                                <aside><p><b>{{persona.ciudad_nac}}-{{persona.prov_nac}}-{{persona.pais_nac}}</b></p></aside>
+                                <div class="reset"></div>
+                                
+                              
+                                <ol >
+                                  <li *ngFor="let educacion of educacionList">{{educacion.titulo}}</li>
+                              
+                                </ol>
+                                  <p align="justify" > {{persona.acerca_mi}}</p>
+                            </div>
+                            
+                  </details>
+                </div>
+                
+         </div>  
+    </div>    
+</div>
+
+<!--aca va el modal --->
+
+
+<ng-template #modifi let-modal>
+
+  
+
+        <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLabel">Ingrese sus datos</h2>
+                  <button
+                      type="button"
+                      class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+              </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Nombre:</label>
+                  <input
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  [(ngModel)]="persona.nombre"
+                  required minlength="4"
+                  [ngClass]="{'is-invalid':nombre.invalid && nombre.touched,'is-valid':!nombre.invalid && nombre.touched}"
+               
+                  placeholder="Nombre"
+                  #nombre="ngModel" 
+                
+                  />
+                  <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+                    class="alert"></div>
+                    <div *ngIf="nombre.errors?.['required']" class="text-danger">
+                     Nombre es requerido
+                    </div>
+         
+              
+              <label for="apellido" >Apellido:</label>
+                  <input
+                  class="form-control"
+                  id="apellido"
+                  name="apellido"
+                  [ngClass]="{'is-invalid':apellido.invalid && apellido.touched,'is-valid':!apellido.invalid && apellido.touched}"
+                  type="text"
+                  [(ngModel)]="persona.apellido"
+                  placeholder="Apellido" 
+                  #apellido="ngModel"
+                  required="3"
+                  
+                
+                  />
+                  <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)"
+                    class="alert"></div>
+                    <div *ngIf="apellido.errors?.['required']" class="text-danger">
+                     El apellido es requerido
+                    </div>
+     
+              <label for="fecha_nac">Fecha De Nacimiento:</label>
+                  <input
+                  class="form-control"
+                  name="fecha_nac"
+                  [(ngModel)]="persona.fecha_nac"
+                  type="date"
+                  id="fecha_nac" name="fecha_nac"
+                  required pattern="\d{4}-\d{2}-\d{2}"
+                  placeholder="Fecha Nacimiento" 
+                
+                  /><br>
+              
+              <p>Lugar de Nacimiento</p>
+              <label for="pais">Ciudad:</label>
+              <input
+              class="form-control"
+              name="pais"
+              type="text"
+              [(ngModel)]="persona.ciudad_nac"
+           
+              placeholder="ciudad"
+              />
+
+              <label for="provincia">Provincia:</label>
+                  
+                  <select name="provincia" 
+                  [(ngModel)]="persona.prov_nac"
+                  class="form-control">
+                      <option>Mendoza</option>
+                      <option>Buenos Aires</option>
+                      <option>CABA</option>
+                      <option>Catamarca</option>
+                      <option>Chaco</option>
+                      <option>Chubut</option>
+                      <option>Cordoba</option>
+                      <option>Corrientes</option>
+                      <option>Entre Ríos</option>
+                      <option>Formosa</option>
+                      <option>Jujuy</option>
+                      <option>La pampa</option>
+                      <option>San Juan</option>
+                      <option>San Luis</option>
+                      <option>La Rioja</option>
+                      <option>Tucumán</option>
+                      <option>Salta</option>
+                      
+                  </select>
+              <label for="pais">Pais:</label>
+                  <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="persona.pais_nac"
+                  placeholder="pais"
+                
+                  />
+              <label for="urlimagen_banner">URL Imagen Banner:</label>
+                  <input
+                  class="form-control"
+                  name="urlimagen_banner"
+                  [(ngModel)]="persona.url_baner"
+                  type="text"
+                  placeholder="URL" 
+                  
+                  />
+              
+              <label for="urlimagen_face">URL Imagen Rostro:</label>
+                  <input
+                  class="form-control"
+                  name="urlimagen_face"
+                  [(ngModel)]="persona.url_face"
+                  type="text"
+                  placeholder="URL" 
+                  
+                  />
+              
+
+              <label for="acerca_mi">Acerca de mi:</label>
+                  <textarea 
+                  [(ngModel)]="persona.acerca_mi"
+                  class="form-control"
+                  rows="10"
+                  cols="50"
+                  name="acerca_mi"
+                  type="text"
+                  placeholder="Describe las caractereristicas sobre tu educacion, experiencia y habilidades" ></textarea>
+                  
+                  
+
+            </div>
+          </div>
+
+     
+              <div class="modal-footer" >
+            
+              <button
+                      type="button"
+                      class="btn btn-secondary" (click)="modal.dismiss('cancel click')" >
+                      Cancelar
+                  </button>
+              
+
+                  <button 
+                      type="button"
+                      
+                      class="btn btn-info" (click)="editar(persona)">
+                      Guardar Cambios
+                  </button>
+           </div>
+
+
+
+</ng-template>
+
+

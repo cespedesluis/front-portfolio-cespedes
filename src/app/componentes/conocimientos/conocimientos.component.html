@@ -1,0 +1,181 @@
+<div name="conocimientos" id="conocimientos"></div> 
+<div class="section">
+    <div class="conocimientos" >
+     
+         <img class="img_logo" src="https://cdn-icons-png.flaticon.com/512/1232/1232772.png">
+        <aside><h2>Skill Hard & Soft </h2></aside>            
+         <div class="center">
+           <div class="edit" *ngIf="invalidLogin==false">
+            <button type="button" title="Agregar Skill" (click)="openModal(content)" class="fa fa-plus" aria-hidden="true"></button>
+           </div>
+      
+     
+      <div class="progress" >
+        <div class="container" >
+          <div class="row" >
+            <div class="col col-sm-4"  *ngFor="let conocimiento of conocimientosList"> 
+              <div class="edit" *ngIf="invalidLogin==false">
+                <button type="button" title="Modificar Skill" (click)="cargar(modifi,conocimiento)" class="fa fa-pencil" aria-hidden="true"></button>
+                             
+                <button type="button" title="Eliminar Skill" (click)="onDelete(eliminar,conocimiento)" class="fa fa-times" aria-hidden="true"></button>
+             </div>
+  
+      <circle-progress
+       [percent]="conocimiento.progress"
+       [radius]="80"
+       [title]="conocimiento.skill"
+       [showTitle]="true"
+       [showSubtitle]="true"
+       [showUnits]="false"
+       [showInnerStroke]="true"
+        [showZeroOuterStroke]="true"
+       [subtitle]="conocimiento.progress+'%'"
+       
+       [subtitleColor]="'black'"
+       [subtitleFontSize]="'15'"
+       
+       
+
+       [outerStrokeWidth]="15"
+       [innerStrokeWidth]="1"
+        [outerStrokeColor]="'#017bab'"
+        [innerStrokeColor]="'#017bab'"
+        
+         [animation]="true"
+         [animationDuration]="600"
+        ></circle-progress>
+        </div>
+          </div>
+        </div>
+     
+  
+    </div>
+         
+  </div>
+</div>  
+
+<!--ACA VA EL MODEL-->
+
+
+<ng-template #content let-modal>
+                
+                      <div class="modal-header">
+                              <h2 class="modal-title" id="exampleModalLabel">Skill</h2>
+                              <button
+                              type="button"
+                              class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                      </div>
+                       <div class="modal-body">
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">Name Skill</label>
+                              <input  type="text" name="educacion.educa" 
+                              [(ngModel)]="conocimiento.skill"
+                              class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese nombre de Skill">
+  
+                              <label for="exampleInputEmail1">
+                                
+                                Progress(%)</label>
+                              <input  type="text"  class="form-control" 
+                              [(ngModel)]="conocimiento.progress"
+                              id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese valor porcentual de su progreso">
+                                  
+                            </div>
+                      </div>
+  
+                      
+                      <div class="modal-footer">
+                            <button
+                                  type="button"
+                                  class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                                  Cerrar
+                              </button>
+                              <button 
+                                  type="button"
+                                  class="btn btn-info" (click)="guardar()">
+                                  Guardar 
+                              </button>
+                      </div>
+</ng-template>
+
+
+
+
+<!--modal para modificar -->
+
+
+
+
+<ng-template #modifi let-modal>
+                
+  <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Skill</h2>
+          <button
+          type="button"
+          class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+  </div>
+   <div class="modal-body">
+      <div class="form-group">
+          <label for="exampleInputEmail1">Name Skill</label>
+          <input  type="text" name="educacion.educa" 
+          [(ngModel)]="conocimiento.skill"
+          class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese nombre de Skill">
+
+          <label for="exampleInputEmail1">
+            
+            Progress(%)</label>
+          <input  type="text"  class="form-control" 
+          [(ngModel)]="conocimiento.progress"
+          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese valor porcentual de su progreso">
+          
+        </div>
+  </div>
+
+  
+  <div class="modal-footer">
+        <button
+              type="button"
+              class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+              Cerrar
+          </button>
+          <button 
+              type="button"
+              class="btn btn-info" (click)="editar(conocimiento)">
+              Guardar Cambios
+          </button>
+  </div>
+</ng-template>
+
+<!--modal para eliminar-->
+<ng-template #eliminar let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Eliminar Experiencia</h2>
+    <button
+    type="button"
+    class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+</div>
+  <div class="modal-body">
+    <p>La eliminacion del registro es definitivo.</p>
+    
+    
+  </div>
+
+
+  <div class="modal-footer">
+    <button
+          type="button"
+          class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+          Cancelar
+      </button>
+      <button 
+          type="button"
+          class="btn btn-info" (click)="delete(conocimiento)">
+          Eliminar
+        </button>
+  </div>
+
+
+
+</ng-template>
+
+
+

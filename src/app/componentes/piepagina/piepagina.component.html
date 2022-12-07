@@ -1,0 +1,105 @@
+
+
+
+<div class="footer">
+    <div class="pie_pagina01">
+      <div *ngFor="let persona of personaList">
+        <div class="edit" *ngIf="invalidLogin==false">
+          <button type="button" title="Modificar Datos" (click)="cargar(modifi,persona)" class="fa fa-pencil" aria-hidden="true"></button>
+         
+        </div>
+
+        <p><b>{{persona.nombre_dev}}-Developer.</b></p>
+        
+        <p class="fa fa-home" > {{persona.direccion}}</p><br> 
+
+        <a href="mailto:vampirochipi78@gmail.com" class="fa fa-envelope-o"> {{persona.email}}</a> <br><br>
+        <a href="https://api.whatsapp.com/send?phone=+5492615090554&text=Quiero contactarme!" target="_blank" class="fa fa-whatsapp">{{persona.telefono }}</a>
+
+        
+
+
+       </div> 
+    </div> 
+
+   
+    
+
+    <div class="pie_pagina02">
+
+
+      <p><b>Mapa del sitio </b></p>
+       <ul>
+           <li> <a href="#respecto_a_mi" >Respecto a mi</a></li>
+           <li><a href="#educacion">Educación</a></li>
+           <li><a href="#experiencia">Experiencia</a></li>
+           <li><a href="#cursos">Cursos</a></li>
+           <li><a href="#conocimientos">Conocimientos</a></li>
+       </ul>
+       
+
+    </div>
+
+   
+    
+
+    
+</div> 
+
+<!--ACA VA EL MODAL-->
+
+
+<ng-template #modifi let-modal>
+                       <div class="modal-header" data-bacdrop="static">
+                              <h2 class="modal-title" id="exampleModalLabel">Datos del Contacto</h2>
+                              <button
+                                    type="button"
+                                    class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>   
+                      </div>
+                      <div class="modal-body">
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">Nombre del desarrollador</label>
+                              <input  type="text" name="educacion.educa" class="form-control" 
+                              [(ngModel)]="persona.nombre_dev"
+                              id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese Nombre del desarrollador">
+  
+                              <label for="exampleInputEmail1">Dirección</label>
+                              <input  type="text"  class="form-control" 
+                              [(ngModel)]="persona.direccion"
+                              id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese direccion ">
+                              
+                              <label for="exampleInputEmail1">Email</label>
+                              <input  type="text"  class="form-control" id="exampleInputEmail1" 
+                              [(ngModel)]="persona.email"
+                              aria-describedby="emailHelp" placeholder="Ingrese el Email ">
+                              
+                              <label for="exampleInputEmail1">Whatsapp</label>
+                              <input  type="text"  class="form-control" id="exampleInputEmail1" 
+                              [(ngModel)]="persona.telefono"
+                              aria-describedby="emailHelp" placeholder="Ingrese el numero de Whatsapp">
+                              
+                            
+                          
+                              </div>
+                      </div>
+  
+                      
+                      <div class="modal-footer">
+                            <button
+                                  type="button"
+                                  class="btn btn-secondary" (click)="modal.dismiss('cancel click')">
+                                  Cerrar
+                              </button>
+                              <button 
+                                  type="button"
+                                  class="btn btn-info" (click)="guardar()">
+                                  Guardar Cambios
+                              </button>
+                      </div>
+</ng-template>
+
+
+
+
+  
+
