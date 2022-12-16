@@ -8,7 +8,7 @@ import { Usuario } from '../model/Usuario';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  private apiSeverUrl='https://backcespedesluis.herokuapp.com/api';
+  private apiSeverUrl='https://witty-claudelle-cespedesluis.koyeb.app/api';
 
   constructor(private Http:HttpClient) { 
 }

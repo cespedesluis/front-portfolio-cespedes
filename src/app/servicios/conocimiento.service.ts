@@ -8,7 +8,7 @@ import { Conocimiento } from '../model/Conocimiento';
   providedIn: 'root'
 })
 export class ConocimientoService {
-  private apiSeverUrl='https://backcespedesluis.herokuapp.com/api';
+  private apiSeverUrl='https://witty-claudelle-cespedesluis.koyeb.app/api';
   
   constructor(private Http: HttpClient) { }
  
